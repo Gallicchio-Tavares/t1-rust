@@ -1,0 +1,7 @@
+/home/uma-pessoa-humana/projetos/t1-rust/app-cli/target/debug/deps/libsync_wrapper-fdaec33dd01ed49d.rmeta: /home/uma-pessoa-humana/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sync_wrapper-0.1.2/src/lib.rs
+
+/home/uma-pessoa-humana/projetos/t1-rust/app-cli/target/debug/deps/libsync_wrapper-fdaec33dd01ed49d.rlib: /home/uma-pessoa-humana/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sync_wrapper-0.1.2/src/lib.rs
+
+/home/uma-pessoa-humana/projetos/t1-rust/app-cli/target/debug/deps/sync_wrapper-fdaec33dd01ed49d.d: /home/uma-pessoa-humana/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sync_wrapper-0.1.2/src/lib.rs
+
+/home/uma-pessoa-humana/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sync_wrapper-0.1.2/src/lib.rs:

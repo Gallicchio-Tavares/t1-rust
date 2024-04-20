@@ -1,0 +1,11 @@
+/home/uma-pessoa-humana/projetos/t1-rust/app-cli/target/debug/deps/libipnet-ee95bbf64b31a410.rmeta: /home/uma-pessoa-humana/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ipnet-2.9.0/src/lib.rs /home/uma-pessoa-humana/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ipnet-2.9.0/src/ipext.rs /home/uma-pessoa-humana/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ipnet-2.9.0/src/ipnet.rs /home/uma-pessoa-humana/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ipnet-2.9.0/src/parser.rs /home/uma-pessoa-humana/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ipnet-2.9.0/src/mask.rs
+
+/home/uma-pessoa-humana/projetos/t1-rust/app-cli/target/debug/deps/libipnet-ee95bbf64b31a410.rlib: /home/uma-pessoa-humana/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ipnet-2.9.0/src/lib.rs /home/uma-pessoa-humana/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ipnet-2.9.0/src/ipext.rs /home/uma-pessoa-humana/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ipnet-2.9.0/src/ipnet.rs /home/uma-pessoa-humana/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ipnet-2.9.0/src/parser.rs /home/uma-pessoa-humana/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ipnet-2.9.0/src/mask.rs
+
+/home/uma-pessoa-humana/projetos/t1-rust/app-cli/target/debug/deps/ipnet-ee95bbf64b31a410.d: /home/uma-pessoa-humana/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ipnet-2.9.0/src/lib.rs /home/uma-pessoa-humana/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ipnet-2.9.0/src/ipext.rs /home/uma-pessoa-humana/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ipnet-2.9.0/src/ipnet.rs /home/uma-pessoa-humana/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ipnet-2.9.0/src/parser.rs /home/uma-pessoa-humana/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ipnet-2.9.0/src/mask.rs
+
+/home/uma-pessoa-humana/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ipnet-2.9.0/src/lib.rs:
+/home/uma-pessoa-humana/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ipnet-2.9.0/src/ipext.rs:
+/home/uma-pessoa-humana/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ipnet-2.9.0/src/ipnet.rs:
+/home/uma-pessoa-humana/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ipnet-2.9.0/src/parser.rs:
+/home/uma-pessoa-humana/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ipnet-2.9.0/src/mask.rs:

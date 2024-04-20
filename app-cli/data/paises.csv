@@ -1,1 +1,7 @@
-Brasil,América do Sul,Visited,true
+Brasil,América do Sul,SemViagem,true,1
+Argentina,América do Sul,QueroVisitar,true,2
+Alemanha,Europa,SemViagem,true,1
+Islândia,Europa,SemViagem,false,0
+Países Baixos,Europa,SemViagem,false,0
+Lesoto,África,SemViagem,false,0
+Estados Unidos,América do Norte,SemViagem,false,0
