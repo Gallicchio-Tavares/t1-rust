@@ -4,7 +4,7 @@ mod fato_random;
 
 use paises::{read_paises_from_file, write_paises_to_file};
 use funcoes::{adicionar_pais, remover_pais, exibir_paises, definir_status_pais};
-use fato_random::ver_fato_aleatorio_de_pais;
+use fato_random::{ver_fato_aleatorio_de_pais, obter_paragrafo_wikipedia};
 use std::io::{self, Write};
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
@@ -36,10 +36,16 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 },
                 4 => definir_status_pais(&mut paises),
                 5 => {
-                    println!("Até mais! Aqui seu fato aleatório do dia:");
+                    print!("Até mais! Aqui seu fato aleatório do dia sobre ");
                     match ver_fato_aleatorio_de_pais() {
-                        Ok(paragrafo) => println!("\n{}", paragrafo),
-                        Err(e) => eprintln!("Erro: {}", e),
+                        Ok((pais, url)) => {
+                            println!("{}:", pais);
+                            match obter_paragrafo_wikipedia(&url) {
+                                Ok(paragrafo) => println!("\n{}", paragrafo),
+                                Err(e) => eprintln!("Erro ao obter parágrafo da Wikipedia: {}", e),
+                            }
+                        },
+                        Err(e) => eprintln!("Erro ao obter país aleatório: {}", e),
                     }
                     write_paises_to_file(filename, &paises)?;
                     break;
