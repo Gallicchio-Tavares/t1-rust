@@ -49,7 +49,6 @@ pub fn remover_pais(paises: &mut Vec<Pais>) {
 }
 
 impl Pais {
-    // Outras funções existentes
 
     pub fn atualizar_visitas(&mut self, visitas: u32) {
         self.jafui = visitas;

@@ -1,14 +1,14 @@
 use std::fs::{File, OpenOptions};
 use std::io::{self, BufRead, BufReader, Write};
 
-#[derive(Debug, Clone, serde::Serialize, serde::Deserialize)] 
+#[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize)] 
 pub enum VisitStatus {
     SemViagem,
     QueroVisitar,
     ViagemMarcada,
 }
 
-#[derive(Debug, Clone, serde::Serialize, serde::Deserialize)]
+#[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize)] 
 pub struct Pais {
     pub nome: String,
     pub continente: String,

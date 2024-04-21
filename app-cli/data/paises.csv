@@ -1,4 +1,3 @@
-Brasil,América do Sul,SemViagem,true,1
 Argentina,América do Sul,QueroVisitar,true,2
 Alemanha,Europa,SemViagem,true,1
 Islândia,Europa,SemViagem,false,1
@@ -11,3 +10,4 @@ Austrália,Oceania,QueroVisitar,false,0
 Japão,Ásia,SemViagem,false,0
 Nova Zelândia,Oceania,QueroVisitar,true,0
 Tunísia,África,QueroVisitar,false,0
+Estados Unidos,América do Norte,SemViagem,false,1

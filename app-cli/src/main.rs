@@ -1,11 +1,13 @@
 mod paises;
 mod funcoes;
 mod fato_random;
+mod tests;
 
 use paises::{read_paises_from_file, write_paises_to_file};
 use funcoes::{adicionar_pais, remover_pais, exibir_paises, definir_status_pais};
 use fato_random::{ver_fato_aleatorio_de_pais, obter_paragrafo};
 use std::io::{self, Write};
+use colored::*;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let filename = "data/paises.csv";
@@ -13,7 +15,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("Boas vindas ao seu gerenciador de viagens!");
 
     loop {
-        println!("\n=== Menu ===");
+        println!("\n{}", "=== Menu ===".purple());
         println!("1. Adicionar país a lista"); // create
         println!("2. Remover país de lista"); // delete
         println!("3. Exibir meus países"); // read
@@ -36,16 +38,16 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 },
                 4 => definir_status_pais(&mut paises),
                 5 => {
-                    print!("Até mais! Aqui seu fato aleatório do dia sobre ");
+                    print!("\nAté mais! Aqui seu fato aleatório do dia sobre ");
                     match ver_fato_aleatorio_de_pais() {
                         Ok((pais, url)) => {
-                            println!("{}:", pais);
+                            println!("{}:", pais.cyan());
                             match obter_paragrafo(&url) {
-                                Ok(paragrafo) => println!("\n{}", paragrafo),
-                                Err(e) => eprintln!("Erro ao obter parágrafo da Wikipedia: {}", e),
+                                Ok(paragrafo) => println!("\n{}", paragrafo.italic()),
+                                Err(e) => eprintln!("Erro ao obter parágrafo: {}", e),
                             }
                         },
-                        Err(e) => eprintln!("Erro ao obter país aleatório: {}", e),
+                        Err(e) => eprintln!("Erro ao obter país: {}", e),
                     }
                     write_paises_to_file(filename, &paises)?;
                     break;
