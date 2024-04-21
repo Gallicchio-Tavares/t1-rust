@@ -38,7 +38,7 @@ pub fn ver_fato_aleatorio_de_pais() -> Result<(String, String), Box<dyn std::err
     Ok((pais_aleatorio, url))
 }
 
-pub fn obter_paragrafo_wikipedia(url: &str) -> Result<String, Box<dyn std::error::Error>> {
+pub fn obter_paragrafo(url: &str) -> Result<String, Box<dyn std::error::Error>> {
     // Fazer uma requisição GET para obter o HTML da página da Wikipedia
     let response = get(url)?;
     let html = response.text()?;
@@ -58,7 +58,23 @@ pub fn obter_paragrafo_wikipedia(url: &str) -> Result<String, Box<dyn std::error
     // Selecionar aleatoriamente um parágrafo entre o terceiro e o vigésimo
     let mut rng = rand::thread_rng();
     let selected_paragraph = paragraphs.choose(&mut rng).ok_or("Nenhum parágrafo encontrado")?;
-
+    let clean_paragraph = limpeza(&selected_paragraph);
     // Retornar o parágrafo selecionado
-    Ok(selected_paragraph.clone())
+    Ok(clean_paragraph.clone())
+}
+
+fn limpeza(paragrafo: &str) -> String {
+    let mut limpo = String::new();
+    let mut dentro_colchetes = false;
+
+    for c in paragrafo.chars() {
+        match c {
+            '[' => dentro_colchetes = true,
+            ']' => dentro_colchetes = false,
+            _ if !dentro_colchetes => limpo.push(c),
+            _ => (),
+        }
+    }
+
+    limpo
 }

@@ -4,7 +4,7 @@ mod fato_random;
 
 use paises::{read_paises_from_file, write_paises_to_file};
 use funcoes::{adicionar_pais, remover_pais, exibir_paises, definir_status_pais};
-use fato_random::{ver_fato_aleatorio_de_pais, obter_paragrafo_wikipedia};
+use fato_random::{ver_fato_aleatorio_de_pais, obter_paragrafo};
 use std::io::{self, Write};
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
@@ -16,7 +16,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         println!("\n=== Menu ===");
         println!("1. Adicionar país a lista"); // create
         println!("2. Remover país de lista"); // delete
-        println!("3. Exibir lista de países"); // read
+        println!("3. Exibir meus países"); // read
         println!("4. Modificar status de um país"); // update -> adicionar favorito, marcar se já foi, modificar VisitStatus
         println!("5. Sair");
 
@@ -40,7 +40,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                     match ver_fato_aleatorio_de_pais() {
                         Ok((pais, url)) => {
                             println!("{}:", pais);
-                            match obter_paragrafo_wikipedia(&url) {
+                            match obter_paragrafo(&url) {
                                 Ok(paragrafo) => println!("\n{}", paragrafo),
                                 Err(e) => eprintln!("Erro ao obter parágrafo da Wikipedia: {}", e),
                             }

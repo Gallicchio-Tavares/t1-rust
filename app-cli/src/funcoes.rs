@@ -3,6 +3,7 @@ use std::collections::HashMap;
 use std::io::{self, Write};
 use std::fs::File;
 use csv::ReaderBuilder;
+use colored::*;
 
 const DADOS_FILE: &str = "data/dados.csv";
 
@@ -146,10 +147,21 @@ pub fn exibir_paises(paises: &Vec<Pais>, mostrar_favoritos: bool) {
 
     // Imprimir os países agrupados por continente
     for (continente, paises) in &paises_por_continente {
-        println!("=== {} ===", continente);
+        println!("\n=== {} ===", continente.purple());
         for pais in paises {
             if !mostrar_favoritos || pais.favorito {
-                println!("{}", pais.nome);
+                let status_viagem = match pais.visitado {
+                    VisitStatus::QueroVisitar => "quero visitar",
+                    VisitStatus::ViagemMarcada => "tenho uma viagem marcada",
+                    _ => "não penso em visitar no momento"
+                };
+                println!(
+                    "{} - visitei {} vez(es) e {}",
+                    pais.nome.yellow(), 
+                    pais.jafui.to_string().blue(),
+                    status_viagem
+                );
+                
             }
         }
     }
