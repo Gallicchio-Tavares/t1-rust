@@ -40,16 +40,24 @@ pub fn obter_paragrafo(url: &str) -> Result<String, Box<dyn std::error::Error>> 
 
     let mut paragraphs = Vec::new();
     for paragraph in document.select(&selector) {
-        paragraphs.push(paragraph.text().collect::<String>());
+        let text = paragraph.text().collect::<String>();
+        if !text.is_empty() && text.contains('.') { // Verifica se o parágrafo não está vazio e contém mais de uma frase
+            paragraphs.push(text);
+        }
+    }
+
+    if paragraphs.is_empty() {
+        return Err("Nenhum parágrafo válido encontrado".into());
     }
 
     // Selecionar aleatoriamente um parágrafo
     let mut rng = rand::thread_rng();
-    let selected_paragraph = paragraphs.choose(&mut rng).ok_or("Nenhum parágrafo encontrado")?;
-    let clean_paragraph = limpeza(&selected_paragraph);
+    let selected_paragraph = paragraphs.choose(&mut rng).unwrap(); // Usamos unwrap aqui pois sabemos que o vetor `paragraphs` não está vazio
+    let clean_paragraph = limpeza(selected_paragraph);
 
     Ok(clean_paragraph.clone())
 }
+
 
 fn limpeza(paragrafo: &str) -> String {
     let mut limpo = String::new();
