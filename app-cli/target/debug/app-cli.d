@@ -1,1 +1,0 @@
-/home/uma-pessoa-humana/Documentos/codigos/t1-rust/app-cli/target/debug/app-cli: /home/uma-pessoa-humana/Documentos/codigos/t1-rust/app-cli/src/fato_random.rs /home/uma-pessoa-humana/Documentos/codigos/t1-rust/app-cli/src/funcoes.rs /home/uma-pessoa-humana/Documentos/codigos/t1-rust/app-cli/src/main.rs /home/uma-pessoa-humana/Documentos/codigos/t1-rust/app-cli/src/paises.rs

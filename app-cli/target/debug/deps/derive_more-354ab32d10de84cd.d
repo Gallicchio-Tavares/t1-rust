@@ -1,9 +1,0 @@
-/home/uma-pessoa-humana/Documentos/codigos/t1-rust/app-cli/target/debug/deps/libderive_more-354ab32d10de84cd.so: /home/uma-pessoa-humana/.cargo/registry/src/index.crates.io-6f17d22bba15001f/derive_more-0.99.17/src/lib.rs /home/uma-pessoa-humana/.cargo/registry/src/index.crates.io-6f17d22bba15001f/derive_more-0.99.17/src/utils.rs /home/uma-pessoa-humana/.cargo/registry/src/index.crates.io-6f17d22bba15001f/derive_more-0.99.17/src/add_assign_like.rs /home/uma-pessoa-humana/.cargo/registry/src/index.crates.io-6f17d22bba15001f/derive_more-0.99.17/src/add_helpers.rs /home/uma-pessoa-humana/.cargo/registry/src/index.crates.io-6f17d22bba15001f/derive_more-0.99.17/src/add_like.rs
-
-/home/uma-pessoa-humana/Documentos/codigos/t1-rust/app-cli/target/debug/deps/derive_more-354ab32d10de84cd.d: /home/uma-pessoa-humana/.cargo/registry/src/index.crates.io-6f17d22bba15001f/derive_more-0.99.17/src/lib.rs /home/uma-pessoa-humana/.cargo/registry/src/index.crates.io-6f17d22bba15001f/derive_more-0.99.17/src/utils.rs /home/uma-pessoa-humana/.cargo/registry/src/index.crates.io-6f17d22bba15001f/derive_more-0.99.17/src/add_assign_like.rs /home/uma-pessoa-humana/.cargo/registry/src/index.crates.io-6f17d22bba15001f/derive_more-0.99.17/src/add_helpers.rs /home/uma-pessoa-humana/.cargo/registry/src/index.crates.io-6f17d22bba15001f/derive_more-0.99.17/src/add_like.rs
-
-/home/uma-pessoa-humana/.cargo/registry/src/index.crates.io-6f17d22bba15001f/derive_more-0.99.17/src/lib.rs:
-/home/uma-pessoa-humana/.cargo/registry/src/index.crates.io-6f17d22bba15001f/derive_more-0.99.17/src/utils.rs:
-/home/uma-pessoa-humana/.cargo/registry/src/index.crates.io-6f17d22bba15001f/derive_more-0.99.17/src/add_assign_like.rs:
-/home/uma-pessoa-humana/.cargo/registry/src/index.crates.io-6f17d22bba15001f/derive_more-0.99.17/src/add_helpers.rs:
-/home/uma-pessoa-humana/.cargo/registry/src/index.crates.io-6f17d22bba15001f/derive_more-0.99.17/src/add_like.rs:
