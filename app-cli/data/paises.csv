@@ -1,0 +1,14 @@
+Argentina,América do Sul,QueroVisitar,true,2
+Alemanha,Europa,SemViagem,true,1
+Islândia,Europa,SemViagem,true,1
+Países Baixos,Europa,SemViagem,false,1
+Lesoto,África,QueroVisitar,false,0
+Chile,América do Sul,QueroVisitar,false,1
+Áustria,Europa,ViagemMarcada,false,1
+Rússia,Europa,ViagemMarcada,true,0
+Austrália,Oceania,QueroVisitar,false,0
+Japão,Ásia,SemViagem,false,0
+Nova Zelândia,Oceania,QueroVisitar,true,0
+Tunísia,África,QueroVisitar,false,0
+Estados Unidos,América do Norte,SemViagem,false,1
+França,Europa,SemViagem,false,1

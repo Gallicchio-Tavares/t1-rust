@@ -4,21 +4,32 @@ use std::io::{self, Write};
 use std::fs::File;
 use csv::ReaderBuilder;
 use colored::*;
+//extern crate inflector;
+use inflector::Inflector;
 
 const DADOS_FILE: &str = "data/dados.csv";
 
-pub fn adicionar_pais(paises: &mut Vec<Pais>) -> io::Result<()>{
+pub fn adicionar_pais(paises: &mut Vec<Pais>) -> io::Result<()> {
     print!("Digite o nome do país que deseja adicionar: ");
     io::stdout().flush().unwrap();
     let mut nome = String::new();
     io::stdin().read_line(&mut nome)?;
 
-    let continente = obter_continente(&nome.trim())?;
-    let novo_pais = Pais::new(nome.trim().to_string(), continente);
+    let nome_formatado = nome.trim().to_title_case();
+
+    // Verifica se o país já existe na lista
+    if paises.iter().any(|pais| pais.nome.trim() == nome_formatado) {
+        println!("\n{}","Este país já foi adicionado!".red());
+        return Ok(());
+    }
+
+    let continente = obter_continente(&nome_formatado)?;
+    let novo_pais = Pais::new(nome_formatado, continente);
     paises.push(novo_pais);
 
     Ok(())
 }
+
 
 fn obter_continente(nome_pais: &str) -> io::Result<String> {
     let file = File::open(DADOS_FILE)?;
@@ -40,7 +51,9 @@ pub fn remover_pais(paises: &mut Vec<Pais>) {
     let mut nome = String::new();
     io::stdin().read_line(&mut nome).unwrap();
 
-    if let Some(index) = paises.iter().position(|pais| pais.nome.trim() == nome.trim()) {
+    let nome_formatado = nome.trim().to_title_case();
+
+    if let Some(index) = paises.iter().position(|pais| pais.nome.trim() == nome_formatado) {
         paises.remove(index);
         println!("País removido com sucesso.");
     } else {
@@ -83,7 +96,12 @@ fn definir_status_viagem(pais: &mut Pais) {
 
 fn marcar_como_favorito(pais: &mut Pais) {
     pais.favorito = true;
-    println!("País marcado como favorito.");
+    println!("\n{} marcado como favorito", pais.nome.yellow());
+}
+
+fn remover_favorito(pais: &mut Pais) {
+    pais.favorito = false;
+    println!("\n{} removido como favorito", pais.nome.yellow())
 }
 
 fn marcar_quantas_vezes_foi(pais: &mut Pais) {
@@ -108,11 +126,14 @@ pub fn definir_status_pais(paises: &mut Vec<Pais>){
     let mut nome = String::new();
     io::stdin().read_line(&mut nome).unwrap();
 
-    if let Some(pais) = paises.iter_mut().find(|p| p.nome.trim() == nome.trim()) {
+    let nome_formatado = nome.trim().to_title_case();
+
+    if let Some(pais) = paises.iter_mut().find(|p| p.nome.trim() == nome_formatado) {
         println!("Escolha a ação:");
         println!("1. Marcar como favorito");
-        println!("2. Definir status de viagem");
-        println!("3. Marcar quantas vezes visitou");
+        println!("2. Remover como favorito");
+        println!("3. Definir status de viagem");
+        println!("4. Marcar quantas vezes visitou");
 
         print!("Escolha uma opção: ");
         io::stdout().flush().unwrap();
@@ -122,8 +143,9 @@ pub fn definir_status_pais(paises: &mut Vec<Pais>){
         match input.trim().parse::<u32>() {
             Ok(choice) => match choice {
                 1 => marcar_como_favorito(pais),
-                2 => definir_status_viagem(pais),
-                3 => marcar_quantas_vezes_foi(pais),
+                2 => remover_favorito(pais),
+                3 => definir_status_viagem(pais),
+                4 => marcar_quantas_vezes_foi(pais),
                 _ => println!("Opção inválida"),
             },
             Err(_) => println!("Opção inválida"),
