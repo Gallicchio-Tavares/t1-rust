@@ -12,7 +12,7 @@ use colored::*;
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let filename = "data/paises.csv";
     let mut paises = read_paises_from_file(filename)?;
-    println!("Boas vindas ao seu gerenciador de viagens!");
+    println!("Boas vindas ao seu gerenciador de países favorito!");
 
     loop {
         println!("\n{}", "=== Menu ===".purple());
